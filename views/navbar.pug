@@ -1,0 +1,11 @@
+nav
+    .nav-wrapper
+        a(href='/').brand-logo
+            img(src='/images/jlt.png' height='38px' width='auto')
+
+        ul.right
+            if user
+                li
+                    a(href='#')
+                        i.fa.fa-user.fa-fw
+                        span #{user.firstname} #{user.lastname}

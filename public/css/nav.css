@@ -1,0 +1,8 @@
+nav .brand-logo {
+    padding: 16px;
+}
+
+nav .brand-logo img {
+    height: 32px;
+    width: auto;
+}

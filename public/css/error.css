@@ -1,0 +1,9 @@
+.error-message {
+    font-size: 3em;
+    font-style: italic;
+}
+
+.error-code {
+    font-size: 10em;
+    font-weight: bold;
+}

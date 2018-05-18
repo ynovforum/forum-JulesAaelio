@@ -1,0 +1,10 @@
+extends ../base.pug
+block links
+    link(rel='stylesheet' href='/css/error.css')
+block content
+    div
+        div.error-code.center
+            block errorcode
+        div.error-message.center
+            block errormessage
+        a(href='/').btn.btn-block.center-block Retourner à l'acceuil

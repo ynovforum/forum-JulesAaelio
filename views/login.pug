@@ -1,0 +1,15 @@
+extends base.pug
+block content
+    div.row
+        div.col.s5
+            h3 Se connecter
+            form(method='post' action='/login?redirectTo='+redirectTo)
+                div
+                    label(for='username-field') Nom d'utilisateur
+                    input(name='username' id='username-field')
+                div
+                    label(for='password-field') Mot de passe
+                    input(id='password-field' type='password' name='password')
+                button(type='submit').btn.btn-block Se connecter
+        div.col.s5.push-l2
+            include signup.pug

@@ -1,0 +1,14 @@
+html
+    head
+        title Jules LAURENT - Survey
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css")
+        link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous")
+        link(rel='stylesheet' href="/css/nav.css")
+        link(rel='stylesheet' href="/css/style.css")
+        block links
+    body
+        include navbar.pug
+        main.container
+            block content
+        script(src="/scripts/jquery.min.js")
+        block scripts
