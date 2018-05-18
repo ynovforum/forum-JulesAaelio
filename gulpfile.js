@@ -17,7 +17,8 @@ gulp.task('serve',() => {
             "DB_USER":"datauser",
             "DB_PASSWORD":"toto",
             "DB_HOST":"localhost",
-            "DB_DIALECT":"mysql"
+            "DB_DIALECT":"mysql",
+            "SRV_PORT":3500
         },
         // Below i'm using es6 arrow functions but you can remove the arrow and have it a normal .on('restart', function() { // then place your stuff in here }
     }).on('restart',(f) => {

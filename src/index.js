@@ -17,4 +17,4 @@ require('./utils/login.js')(app,auth,passport,db);
 require('./utils/errors')(app);
 
 //Launch server
-app.listen(3500);
+app.listen(process.env.SRV_PORT);
