@@ -16,7 +16,7 @@ gulp.task('serve',() => {
         watch: ["src/*.js",'src/**/*.js'],
         env: {
             "COOKIE_SECRET": "1245",
-            "DATABASE":"forum",
+            "DATABASE":"webproject",
             "DB_USER":"datauser",
             "DB_PASSWORD":"toto",
             "DB_HOST":"localhost",
