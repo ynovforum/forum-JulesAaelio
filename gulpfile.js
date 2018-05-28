@@ -2,7 +2,26 @@ let gulp = require('gulp');
 let sync = require('browser-sync').create();
 let nodemon = require('gulp-nodemon');
 
-gulp.task('serve',() => {
+let sass = require('gulp-sass');
+let cssnano = require('gulp-cssnano');
+let rename = require('gulp-rename');
+let prefix = require('gulp-autoprefixer');
+let sourcemap = require('gulp-sourcemaps');
+
+
+gulp.task('sass', function () {
+    return gulp.src('./src/assets/css/*.scss')
+        .pipe(sourcemap.init())
+        .pipe(sass().on('error', sass.logError))
+        .pipe(prefix())
+        .pipe(cssnano()) // Minify CSS
+        .pipe(rename({suffix: '.min'})) // Minify CSS
+        .pipe(sourcemap.write('.'))
+        .pipe(gulp.dest( './public/css' ));
+});
+
+
+gulp.task('serve',gulp.series('sass',() => {
     sync.init({
         proxy: {
             target: "localhost:3500",
@@ -29,5 +48,6 @@ gulp.task('serve',() => {
     });
     gulp.watch("views/*.pug").on('change', sync.reload);
     gulp.watch("public/*/*.*").on('change', sync.reload);
-});
+    gulp.watch("src/assets/css/*.scss").on('change',gulp.series('sass',sync.reload));
+}));
 
