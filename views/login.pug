@@ -1,13 +1,20 @@
 extends base.pug
 block content
-    div.row
-        h3 Se connecter
-        form(method='post' action='/login?redirectTo='+redirectTo)
-            div
-                label(for='username-field') Nom d'utilisateur
-                input(name='username' id='username-field')
-            div
-                label(for='password-field') Mot de passe
-                input(id='password-field' type='password' name='password')
-            button(type='submit').btn.btn-block Se connecter
-        a(href='/register?redirectTo='+redirectTo) Créer un compte
+    .row.justify-content-center
+        .col.col-md-4
+            .card
+                .card-header.text-center
+                    | Welcome back ! Please login.
+                .card-body
+                    form(method='post' action='/login?redirectTo=' + redirectTo)
+                        .form-group
+                            label(for='username-field')
+                                small.form-text.text-muted  Nom d'utilisateur
+                            input.form-control(name='username' id='username-field')
+                        .form-group
+                            label(for='password-field')
+                                small.form-text.text-muted Mot de passe
+                            input.form-control(id='password-field' type='password' name='password')
+                        button(type='submit').btn.btn-block.btn-primary Se connecter
+            div Don't have an account ?
+                a(href='/register?redirectTo='+redirectTo) Get started !
