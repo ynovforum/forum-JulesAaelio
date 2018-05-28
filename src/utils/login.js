@@ -12,6 +12,11 @@ module.exports  = (app,auth, passport, db) => {
             })(req, res);
         }
     );
+    app.get('/register',(req,res) => {
+        res.render('signup',{
+            redirectTo : req.query.redirectTo
+        });
+    });
     app.post('/register',auth.register(db.User));
     return app;
 };
