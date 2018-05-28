@@ -1,0 +1,14 @@
+extends base
+block content
+    .card
+        .card-body
+            form(method='post')
+                .form-group
+                    label(for='label-field')
+                        small.form-text.text-muted  Titre de la question
+                    input.form-control(name='title' id='label-field')
+                .form-group
+                    label(for='description-field')
+                        small.form-text.text-muted Description
+                    textarea.form-control(id='description-field'  name='description')
+                button(type='submit').btn.float-right.btn-primary Ajouter
