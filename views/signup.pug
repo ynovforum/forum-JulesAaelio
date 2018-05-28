@@ -1,18 +1,27 @@
-h3 Créer un compte
-form(action='/register' method='post')
-    if errors && errors.signup
-        for message in errors.signup
-            div #{message}
-    div
-        label(for='lastname-field') NOM
-        input(name='lastname' id='lastname-field')
-    div
-        label(for='firstname-field') Prénom
-        input(name='firstname' id='firstname-field')
-    div
-        label(for='email-field') Adresse e-mail
-        input(name='email' id='email-field' type='email')
-    div
-        label(for='password-field') Mot de passe
-        input(id='password-field' type='password' name='password')
-    button(type='submit').btn.btn-block Créer un compte
+extends base.pug
+block content
+    .row.justify-content-center
+        .col.col-md-6
+            .card
+                .card-header.text-center
+                    | Créer un compte
+                .card-body
+                    form(action='/register' method='post')
+                        if errors && errors.signup
+                            for message in errors.signup
+                                div #{message}
+                        div.form-group
+                            label(for='lastname-field') NOM
+                            input.form-control(name='lastname' id='lastname-field')
+                        div.form-group
+                            label(for='firstname-field') Prénom
+                            input.form-control(name='firstname' id='firstname-field')
+                        div.form-group
+                            label(for='email-field') Adresse e-mail
+                            input.form-control(name='email' id='email-field' type='email')
+                        div.form-group
+                            label(for='password-field') Mot de passe
+                            input.form-control(id='password-field' type='password' name='password')
+                        button(type='submit').btn.btn-block.btn-primary Créer un compte
+                    div Already have an account ?
+                        a(href='/login?redirectTo=' + redirectTo) Sign in !

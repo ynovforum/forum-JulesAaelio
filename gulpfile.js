@@ -35,7 +35,7 @@ gulp.task('serve',gulp.series('sass',() => {
         watch: ["src/*.js",'src/**/*.js'],
         env: {
             "COOKIE_SECRET": "1245",
-            "DATABASE":"webproject",
+            "DATABASE":"forum",
             "DB_USER":"datauser",
             "DB_PASSWORD":"toto",
             "DB_HOST":"localhost",
