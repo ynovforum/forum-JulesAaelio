@@ -13,6 +13,7 @@ app.use(passport.session());
 //Declare routes behaviors here
 require('./utils/default')(app);
 require('./utils/login.js')(app,auth,passport,db);
+app.use('/question',require('./endpoints/question-anon')(db));
 app.use('/question',authguard,require('./endpoints/question')(db));
 require('./utils/errors')(app);
 
