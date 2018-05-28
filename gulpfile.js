@@ -9,6 +9,11 @@ let prefix = require('gulp-autoprefixer');
 let sourcemap = require('gulp-sourcemaps');
 
 
+gulp.task('scripts',() => {
+    return gulp.src(["./node_modules/bootstrap/dist/js/bootstrap.min.js","./node_modules/jquery/dist/jquery.min.js"])
+        .pipe(gulp.dest("./public/scripts"));
+});
+
 gulp.task('sass', function () {
     return gulp.src('./src/assets/css/*.scss')
         .pipe(sourcemap.init())
@@ -21,7 +26,7 @@ gulp.task('sass', function () {
 });
 
 
-gulp.task('serve',gulp.series('sass',() => {
+gulp.task('serve',gulp.series(['sass','scripts'],() => {
     sync.init({
         proxy: {
             target: "localhost:3500",
