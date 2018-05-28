@@ -1,5 +1,5 @@
 {
-  "name": "project-2-julesaaelio",
+  "name": "forum-julesaaelio",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NodeCourse/project-2-JulesAaelio.git"
+    "url": "git+https://github.com/NodeCourse/forum-JulesAaelio.git"
   },
   "author": "Jules Aaelio",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/NodeCourse/project-2-JulesAaelio/issues"
+    "url": "https://github.com/NodeCourse/forum-JulesAaelio/issues"
   },
-  "homepage": "https://github.com/NodeCourse/project-2-JulesAaelio#readme",
+  "homepage": "https://github.com/NodeCourse/forum-JulesAaelio#readme",
   "dependencies": {
     "bcrypt": "^2.0.1",
     "body-parser": "^1.18.3",
@@ -32,5 +32,6 @@
     "passport-local": "^1.0.0",
     "pug": "^2.0.3",
     "sequelize": "^4.37.7"
-  }
+  },
+  "devDependencies": {}
 }
