@@ -43,3 +43,37 @@ input {
   }
 }
 
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+
+  input[type=checkbox] {
+    visibility: hidden;
+    position: absolute;
+  }
+
+  input ~ .checkbox-box {
+    border:solid 1px $input-basic;
+    background-color: white;
+    border-radius: 3px;
+    height: 1.2rem;
+    width: 1.2rem;
+    .checkbox-mark {
+      visibility: hidden;
+    }
+  }
+
+  input:checked ~ .checkbox-box {
+    background-color: $success;
+    .checkbox-mark {
+      visibility: visible;
+      color: white;
+    }
+  }
+
+  .checkbox-label {
+    padding-left: 10px;
+  }
+}
+
+
