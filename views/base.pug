@@ -11,9 +11,15 @@ html
         include navbar.pug
         main.container
             block content
-                h1 Salut
-                p Lorem iejfiojhfiojezofuieaGOEzfhiehoufhohfeohofehl
-                //h2 KLFHohfioehfioheiofheoihfoiheiof
+                input(placeholder="Type Word")
+                input.empty(placeholder="Type Word")
+                div.input-wrapper
+                    input.valid(placeholder="Type Word")
+                    i.input-icon.fa.fa-check
+                div.input-wrapper
+                    input.error(placeholder="Type Word")
+                    i.input-icon.fa.fa-times
+                a(href='salut').btn.btn-success caca
         script(src="/scripts/jquery.min.js")
         script(src="/scripts/bootstrap.min.js")
         block scripts
