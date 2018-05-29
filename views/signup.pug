@@ -26,6 +26,10 @@ block content
                             label(for='password-field')
                                 small.text-muted Mot de passe
                             input.form-control(id='password-field' type='password' name='password')
+                        div.form-group
+                            label(for='bio-field')
+                                small.text-muted BIO
+                            textarea.form-control(id='bio-field' name='bio')
                         button(type='submit').btn.btn-block.btn-primary Créer un compte
             div Already have an account ?
                 a(href='/login?redirectTo=' + redirectTo) Sign in !

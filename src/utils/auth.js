@@ -50,7 +50,7 @@ function init(User) {
 
 function registerCallback(User) {
     return (req, res) => {
-        if (req.body && req.body.firstname && req.body.lastname && req.body.password && req.body.email) {
+        if (req.body && req.body.firstname && req.body.lastname && req.body.password && req.body.email && req.body.bio) {
             User.findOne({
                 where: {
                     email: req.body.email,
@@ -71,6 +71,7 @@ function registerCallback(User) {
                             lastname: req.body.lastname,
                             password: password,
                             email: req.body.email,
+                            bio: req.body.bio,
                         }).then((r) => {
                             console.log('[AUTH]User created');
                             req.login(r, (r) => {
