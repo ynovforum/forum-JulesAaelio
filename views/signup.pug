@@ -11,17 +11,21 @@ block content
                             for message in errors.signup
                                 div #{message}
                         div.form-group
-                            label(for='lastname-field') NOM
+                            label(for='lastname-field')
+                                small.text-muted NOM
                             input.form-control(name='lastname' id='lastname-field')
                         div.form-group
-                            label(for='firstname-field') Prénom
+                            label(for='firstname-field')
+                                small.text-muted Prénom
                             input.form-control(name='firstname' id='firstname-field')
                         div.form-group
-                            label(for='email-field') Adresse e-mail
+                            label(for='email-field')
+                                small.text-muted Adresse e-mail
                             input.form-control(name='email' id='email-field' type='email')
                         div.form-group
-                            label(for='password-field') Mot de passe
+                            label(for='password-field')
+                                small.text-muted Mot de passe
                             input.form-control(id='password-field' type='password' name='password')
                         button(type='submit').btn.btn-block.btn-primary Créer un compte
-                    div Already have an account ?
-                        a(href='/login?redirectTo=' + redirectTo) Sign in !
+            div Already have an account ?
+                a(href='/login?redirectTo=' + redirectTo) Sign in !
