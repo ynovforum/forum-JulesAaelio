@@ -15,7 +15,7 @@ gulp.task('scripts',() => {
 });
 
 gulp.task('sass', function () {
-    return gulp.src('./src/assets/css/*.scss')
+    return gulp.src('./src/assets/css/main.scss')
         .pipe(sourcemap.init())
         .pipe(sass().on('error', sass.logError))
         .pipe(prefix())

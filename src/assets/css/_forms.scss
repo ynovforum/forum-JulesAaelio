@@ -1,0 +1,79 @@
+input {
+  border: solid 1px $input-basic;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 14px;
+  color:$text;
+  display: block;
+  width: 100%;
+  margin-bottom: 10px ;
+
+  ~ .input-icon   {
+    visibility: hidden;
+  }
+
+  &.empty {
+    color: $input-empty;
+    border-color: $input-empty;
+  }
+
+  &.valid {
+    border-color: $success;
+    ~ .input-icon   {
+      visibility: visible ;
+      color: $success;
+    }
+  }
+
+  &.error {
+    border-color: $danger;
+    ~ .input-icon   {
+      visibility: visible ;
+      color: $danger;
+    }
+  }
+}
+
+.input-wrapper {
+  position: relative;
+  .input-icon {
+    position: absolute;
+    top: 35%;
+    right: 15px;
+  }
+}
+
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+
+  input[type=checkbox] {
+    visibility: hidden;
+    position: absolute;
+  }
+
+  input ~ .checkbox-box {
+    border:solid 1px $input-basic;
+    background-color: white;
+    border-radius: 3px;
+    height: 1.2rem;
+    width: 1.2rem;
+    .checkbox-mark {
+      visibility: hidden;
+    }
+  }
+
+  input:checked ~ .checkbox-box {
+    background-color: $success;
+    .checkbox-mark {
+      visibility: visible;
+      color: white;
+    }
+  }
+
+  .checkbox-label {
+    padding-left: 10px;
+  }
+}
+
+
