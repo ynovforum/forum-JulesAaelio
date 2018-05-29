@@ -1,9 +1,9 @@
-@import "bootstrap";
+//@import "bootstrap";
 
-body, body > * {
-  font-family: "Source Sans Pro",sans-serif;
-
-}
+//body, body > * {
+//  font-family: "Source Sans Pro",sans-serif;
+//
+//}
 
 body {
   background-color: #eff3f6;
@@ -13,3 +13,6 @@ body {
   margin-top: 80px;
 
 }
+
+@import "colors";
+@import "fonts";

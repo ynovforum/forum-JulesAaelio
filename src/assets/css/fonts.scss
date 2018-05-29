@@ -1,0 +1,59 @@
+h1,a {
+  font-family: "Source Sans Pro",sans-serif;
+  font-weight: 600;
+}
+
+h2, h3, p, footer {
+  font-family: "Source Sans Pro",sans-serif;
+  font-weight: 400;
+}
+
+a {
+  color: $link;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+a:visited, a:hover {
+  color: $link-clicked;
+}
+
+h1 {
+  font-size: 32px;
+  line-height: 44px;
+}
+
+h2 {
+  font-size: 22px;
+  line-height: 32px;
+}
+
+h3 {
+  font-size: 20px;
+  line-height: 28px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+footer {
+  font-size: 14px;
+  line-height: 22px;
+}
+
+h1,h2,h3,p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 36px;
+}
+
+h2 {
+  margin-bottom: 30px;
+}
+h1+h2 {
+  margin-bottom: 26px;
+}
