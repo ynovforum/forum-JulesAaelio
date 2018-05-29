@@ -18,5 +18,12 @@ module.exports  = (app,auth, passport, db) => {
         });
     });
     app.post('/register',auth.register(db.User));
+
+    app.get('/logout',(req,res) => {
+        req.logout();
+        res.redirect('/');
+    });
+
     return app;
+
 };
