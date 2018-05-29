@@ -3,7 +3,7 @@ input {
   border-radius: 4px;
   padding: 10px;
   font-size: 14px;
-  color:$input-basic;
+  color:$text;
   display: block;
   width: 100%;
   margin-bottom: 10px ;
@@ -15,8 +15,6 @@ input {
   &.empty {
     color: $input-empty;
     border-color: $input-empty;
-
-
   }
 
   &.valid {
