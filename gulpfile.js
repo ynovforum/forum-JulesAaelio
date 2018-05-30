@@ -7,13 +7,13 @@ let cssnano = require('gulp-cssnano');
 let rename = require('gulp-rename');
 let prefix = require('gulp-autoprefixer');
 let sourcemap = require('gulp-sourcemaps');
+let uglify = require('gulp-uglify');
 
 
-gulp.task('scripts',() => {
+gulp.task('cpscripts',() => {
     return gulp.src(
         ["./node_modules/bootstrap/dist/js/bootstrap.min.js",
-            "./node_modules/jquery/dist/jquery.min.js",
-            "./node_modules/tinymce/tinymce.min.js"
+            "./node_modules/jquery/dist/jquery.min.js"
         ])
         .pipe(gulp.dest("./public/scripts/"));
 });
@@ -21,6 +21,15 @@ gulp.task('scripts',() => {
 gulp.task('tinymce',() => {
     return gulp.src("./node_modules/tinymce/**/*")
         .pipe(gulp.dest("./public/scripts/tinymce"));
+});
+
+gulp.task('scripts',() => {
+    return gulp.src("./src/assets/scripts/*")
+        .pipe(sourcemap.init())
+        .pipe(uglify())
+        .pipe(rename({suffix: '.min'}))
+        .pipe(sourcemap.write('.'))
+        .pipe(gulp.dest('./public/scripts/'));
 });
 
 gulp.task('sass', function () {
@@ -35,7 +44,7 @@ gulp.task('sass', function () {
 });
 
 
-gulp.task('serve',gulp.series(['sass','scripts'],() => {
+gulp.task('serve',gulp.series(['sass','cpscripts','scripts','tinymce'],() => {
     sync.init({
         proxy: {
             target: "localhost:3500",
@@ -47,6 +56,7 @@ gulp.task('serve',gulp.series(['sass','scripts'],() => {
         script: './src/index.js',
         // this listens to changes in any of these files/routes and restarts the application
         watch: ["src/*.js",'src/**/*.js'],
+        ignore: ["src/assets/**/*"],
         env: {
             "COOKIE_SECRET": "1245",
             "DATABASE":"forum",
@@ -61,7 +71,8 @@ gulp.task('serve',gulp.series(['sass','scripts'],() => {
         sync.reload();
     });
     gulp.watch("views/*.pug").on('change', sync.reload);
-    gulp.watch("public/*/*.*").on('change', sync.reload);
+    gulp.watch("public/images/*").on('change', sync.reload);
     gulp.watch("src/assets/css/*.scss").on('change',gulp.series('sass',sync.reload));
+    gulp.watch("src/assets/scripts/*.js").on('change',gulp.series('scripts',sync.reload));
 }));
 
