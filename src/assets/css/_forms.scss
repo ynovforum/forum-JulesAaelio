@@ -6,7 +6,7 @@ input,textarea {
   color:$text;
   display: block;
   width: 100%;
-  margin-bottom: 10px ;
+
 
   ~ .input-icon   {
     visibility: hidden;
@@ -41,6 +41,10 @@ input,textarea {
     top: 35%;
     right: 15px;
   }
+}
+
+input,textarea, div.mce-tinymce {
+  margin-bottom: 10px;
 }
 
 .checkbox-wrapper {
