@@ -8,6 +8,7 @@ let rename = require('gulp-rename');
 let prefix = require('gulp-autoprefixer');
 let sourcemap = require('gulp-sourcemaps');
 let uglify = require('gulp-uglify');
+let babel = require('gulp-babel');
 
 
 gulp.task('cpscripts',() => {
@@ -26,6 +27,9 @@ gulp.task('tinymce',() => {
 gulp.task('scripts',() => {
     return gulp.src("./src/assets/scripts/*")
         .pipe(sourcemap.init())
+        .pipe(babel({
+            presets: ['env']
+        }))
         .pipe(uglify())
         .pipe(rename({suffix: '.min'}))
         .pipe(sourcemap.write('.'))
