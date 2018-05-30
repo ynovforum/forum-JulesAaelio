@@ -10,8 +10,17 @@ let sourcemap = require('gulp-sourcemaps');
 
 
 gulp.task('scripts',() => {
-    return gulp.src(["./node_modules/bootstrap/dist/js/bootstrap.min.js","./node_modules/jquery/dist/jquery.min.js"])
-        .pipe(gulp.dest("./public/scripts"));
+    return gulp.src(
+        ["./node_modules/bootstrap/dist/js/bootstrap.min.js",
+            "./node_modules/jquery/dist/jquery.min.js",
+            "./node_modules/tinymce/tinymce.min.js"
+        ])
+        .pipe(gulp.dest("./public/scripts/"));
+});
+
+gulp.task('tinymce',() => {
+    return gulp.src("./node_modules/tinymce/**/*")
+        .pipe(gulp.dest("./public/scripts/tinymce"));
 });
 
 gulp.task('sass', function () {

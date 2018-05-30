@@ -8,6 +8,7 @@ block content
                         img.rounded-circle(src='http://placehold.it/50x50')
                     div.col.col-11
                         h3 #{question.title}
+                            i.fa.fa-pencil-alt.fa-1x.ml-autot
                         small #{question.user.firstname} #{question.user.lastname}
-                p.card-text #{question.description}
+                p.card-text !{question.description}
     div.col.col-md-4
