@@ -1,22 +1,25 @@
 extends base
 block content
-    div.col.col-md-8
-        .card
-            .card-body
-                div.row.align-items-center
-                    div.col.col-md-1.col-3
-                        img.rounded-circle(src='http://placehold.it/50x50')
-                    div.col.col-md-10
-                        input.h3(value=question.title disabled).question-title
-                        //h3 #{question.title}
+    div.row
+        div.col.col-main
+            .card
+                .card-body
+                    div.row.align-items-center
+                        div.col.col-md-1.col-3
+                            img.rounded-circle(src='http://placehold.it/50x50')
+                        div.col.col-expand
+                            input.h2(value=question.title disabled).question-title
+                            //h3 #{question.title}
 
-                        small #{question.user.firstname} #{question.user.lastname}
-                    div.col.col-md-1.col-1
-                        if(user && user.id === question.user.id)
-                            span.fa.fa-pencil-alt.fa-xs.fa-fw.text-muted(data-id=question.id).edit-question
-                div.card-text.question-description
-                    | !{question.description}
-    div.col.col-md-4
+                            small #{question.user.firstname} #{question.user.lastname}
+                        div.col.col-md-1.col-1
+                            if(user && user.id === question.user.id)
+                                span.fa.fa-pencil-alt.fa-xs.fa-fw.text-muted(data-id=question.id).edit-question
+                    div.card-text.question-description
+                        | !{question.description}
+        div.col.col-side.card
+            .card-body
+                h1 TEST
 block scripts
     script(src="/scripts/tinymce/tinymce.min.js")
     script(src="/scripts/question-edit.min.js")

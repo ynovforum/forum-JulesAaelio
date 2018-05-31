@@ -4,12 +4,18 @@
 @import "forms";
 @import "error";
 @import "navbar";
+@import "container";
 
 body {
   background-color: $background;
+  //background-image: url('http://localhost:3000/images/maquette.jpg') ;
+  //background-repeat: no-repeat;
+  //background-size: 100% auto;
 }
 
 .container {
-  margin-top: 80px;
+  margin-top: 99px;
 }
-
+//.container,.navbar {
+//  opacity: 0.5;
+//}
