@@ -5,11 +5,11 @@ module.exports  = (app,auth, passport, db) => {
         });
     });
 
-    app.post('/login',(req,res) => {
+    app.post('/login',(req,res,next) => {
             passport.authenticate('local', {
                 successRedirect: req.query.redirectTo !== 'undefined' ? req.query.redirectTo : '/',
                 failureRedirect: '/login',
-            })(req, res);
+            })(req, res,next);
         }
     );
     app.get('/register',(req,res) => {

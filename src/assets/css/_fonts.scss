@@ -1,9 +1,9 @@
-h1,a {
+h1,.h1, a {
   font-family: "Source Sans Pro",sans-serif;
   font-weight: 600;
 }
 
-h2, h3, p, footer {
+h2, .h2,  h3, .h3 p, .p, footer {
   font-family: "Source Sans Pro",sans-serif;
   font-weight: 400;
 }
@@ -18,22 +18,22 @@ a:visited, a:hover {
   color: $link-clicked;
 }
 
-h1 {
+h1,.h1 {
   font-size: 32px;
   line-height: 44px;
 }
 
-h2 {
+h2, .h2 {
   font-size: 22px;
   line-height: 32px;
 }
 
-h3 {
+h3,.h3 {
   font-size: 20px;
   line-height: 28px;
 }
 
-p {
+p, .p{
   font-size: 16px;
   line-height: 24px;
 }
@@ -43,17 +43,30 @@ footer {
   line-height: 22px;
 }
 
-h1,h2,h3,p {
+h1,.h1, h2, .h2,h3,p ,.p,.h3{
   margin-top: 0;
 }
 
-h1 {
+h1+p, .h1+p{
   margin-bottom: 36px;
 }
 
 h2 {
   margin-bottom: 30px;
 }
-h1+h2 {
+
+h3, .h3{
+  margin-bottom: .5rem;
+}
+h1+h2, .h1+h2, h1+.h2, .h1+.h2  {
   margin-bottom: 26px;
+}
+
+input.h1, input.h2, input.h3 {
+  margin-bottom: 0;
+}
+
+p {
+  padding-left: 14px;
+  padding-top: 14px;
 }

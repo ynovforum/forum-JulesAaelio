@@ -19,5 +19,29 @@ module.exports = (db) => {
             }
         });
 
+    router.put('/:id',(req,res,next) => {
+        db.Question.findById(req.params.id).then(question => {
+            if(question) {
+                if(question.userId === req.user.id) {
+                    if(req.body.description && req.body.title) {
+                        question.title = req.body.title;
+                        question.description = req.body.description;
+                        question.save().then(r => {
+                            res.send(question);
+                        }).catch(e => {
+                            next(e)
+                        });
+                    }
+                } else {
+                    res.status(401);
+                }
+
+            }else {
+                next();
+            }
+        });
+
+    });
+
     return router;
 };

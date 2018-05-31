@@ -12,13 +12,14 @@ function init(User) {
             if (user) {
                 bcrypt.compare(password, user.password).then(r => {
                     if (r) {
+                        console.log(done);
                         return done(null, user)
                     } else {
                         return done(null, false, {
                             message: 'Invalid credentials'
                         });
                     }
-                });
+                })
             } else {
                 return done(null, false, {
                     message: 'Unknown user'
