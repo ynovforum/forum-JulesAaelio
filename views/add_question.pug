@@ -1,5 +1,6 @@
 extends base
 block content
+    h2 Publier une question
     .card
         .card-body
             form(method='post')
@@ -11,7 +12,7 @@ block content
                     label(for='description-field')
                         small.form-text.text-muted Description
                     textarea.form-control(id='description-field'  name='description')
-                button(type='submit').btn.float-right.btn-primary Ajouter
+                button(type='submit').btn.float-right.btn-success Publier
     block scripts
         script(src='/scripts/tinymce/tinymce.min.js')
         script(src='/scripts/question.min.js')
