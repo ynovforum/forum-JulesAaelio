@@ -1,10 +1,13 @@
 extends base.pug
 block content
-    .row.justify-content-center
+    .row.justify-content-center.login
         .col.col-md-4
             .card
                 .card-header.text-center
-                    | Welcome back ! Please login.
+                    span.fa-stack.fa-2x.card-up-icon
+                        i.fas.fa-circle.fa-stack-2x
+                        i.fas.fa-paper-plane.fa-stack-1x.fa-inverse.fa-flip-horizontal
+                    div Welcome back ! Please login.
                 .card-body
                     form(method='post' action='/login?redirectTo=' + redirectTo)
                         .form-group
@@ -15,6 +18,6 @@ block content
                             label(for='password-field')
                                 small.form-text.text-muted Mot de passe
                             input.form-control(id='password-field' type='password' name='password')
-                        button(type='submit').btn.btn-block.btn-primary Se connecter
+                        button(type='submit').btn.btn-block.btn-success Se connecter
             div Don't have an account ?
                 a(href='/register?redirectTo='+redirectTo) Get started !

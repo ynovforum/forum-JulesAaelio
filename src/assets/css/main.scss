@@ -5,12 +5,10 @@
 @import "error";
 @import "navbar";
 @import "container";
+@import "login";
 
 body {
   background-color: $background;
-  background-image: url('http://localhost:3000/images/login.png') ;
-  background-repeat: no-repeat;
-  background-size: 100% auto;
 }
 
 .container {
@@ -19,3 +17,9 @@ body {
 //.container,.navbar {
 //  opacity: 0.5;
 //}
+
+.card-up-icon {
+  margin-top: -10%;
+  color: $primary;
+  margin-bottom: 14px;
+}
