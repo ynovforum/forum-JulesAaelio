@@ -35,11 +35,10 @@
     width: (25/100 * $container-width) - ($default-padding *2) ;
   }
 
-
   @for $i from 1 through 10 {
     .col-md-#{$i} {
       width: $container-width*($i/10);
     }
   }
-}
 
+}
