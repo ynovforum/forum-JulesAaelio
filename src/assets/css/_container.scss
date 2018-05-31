@@ -1,0 +1,45 @@
+.container {
+  margin: auto;
+}
+
+.row {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  margin-left: 14px;
+  margin-right: 14px;
+}
+
+.col-expand {
+  flex-grow: 1
+}
+
+
+@include media-breakpoint-up(md) {
+  $default-padding: 14px;
+  $container-width: 1165px;
+  .container {
+    max-width: $container-width;
+  }
+
+  .col-main {
+    width: (75/100 * $container-width) - ($default-padding*2) ;
+  }
+
+  .col-side {
+    width: (25/100 * $container-width) - ($default-padding *2) ;
+  }
+
+
+  @for $i from 1 through 10 {
+    .col-md-#{$i} {
+      width: $container-width*($i/10);
+    }
+  }
+}
+
