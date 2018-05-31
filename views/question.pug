@@ -44,11 +44,8 @@ block content
                     div Vous connaisez quelqu'un qui peut répondre ? Partagez le lien !
                     label(for='comment-field')
                         small.form-text.text-muted  Votre réponse
-                    textarea(name='comment')#comment-field
+                    textarea(name='comment' id="comment-field").form-control
 
         div.col.col-side.card
             .card-body
                 h1 TEST
-block scripts
-    script(src="/scripts/tinymce/tinymce.min.js")
-    script(src="/scripts/question-edit.min.js")

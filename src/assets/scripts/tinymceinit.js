@@ -1,5 +1,5 @@
 tinymce.init({
-    selector: '#description-field',
+    selector: 'textarea',
     menubar:false,
     toolbar: 'bold italic underline | alignleft alignright aligncenter alignjustify | blockquote'
 });
