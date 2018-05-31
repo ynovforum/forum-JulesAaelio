@@ -2,21 +2,50 @@ extends base
 block content
     div.row
         div.col.col-main
-            .card
+            .card.followed
                 .card-body
                     div.row.align-items-center
-                        div.col.col-md-1.col-3
+                        div.col
                             img.rounded-circle(src='http://placehold.it/50x50')
                         div.col.col-expand
                             input.h2(value=question.title disabled).question-title
                             //h3 #{question.title}
 
                             small #{question.user.firstname} #{question.user.lastname}
-                        div.col.col-md-1.col-1
+                        div.col
                             if(user && user.id === question.user.id)
                                 span.fa.fa-pencil-alt.fa-xs.fa-fw.text-muted(data-id=question.id).edit-question
                     div.card-text.question-description
                         | !{question.description}
+                    div 2 answers
+
+            .card.followed
+                .card-body
+                    div.comment.row
+                        div.col
+                            img.rounded-circle(src='http://placehold.it/50x50')
+                        div.col
+                            small Jules LAURENT | Il y a deux jours
+                            div.comment-content
+                                p Lorem ipsum dolor sit amet consecture adipsis eco plus7
+                                    | ipsum dolor sit amet consecture adipsis eco plus7
+                                    | ipsum dolor sit amet consecture adipsis eco plus7
+                                    | ipsum dolor sit amet consecture adipsis eco plus7
+                                    | ipsum dolor sit amet consecture adipsis eco plus7
+                    div.comment.row
+                        div.col
+                            img.rounded-circle(src='http://placehold.it/50x50')
+                        div.col
+                            small Jules LAURENT | Il y a deux jours
+                            div.comment-content
+                                p Lorem ipsum dolor sit amet consecture adipsis eco plus7
+            .card
+                .card-body
+                    div Vous connaisez quelqu'un qui peut répondre ? Partagez le lien !
+                    label(for='comment-field')
+                        small.form-text.text-muted  Votre réponse
+                    textarea(name='comment')#comment-field
+
         div.col.col-side.card
             .card-body
                 h1 TEST
