@@ -24,31 +24,15 @@ block content
                     for comment in question.comments
                         div.comment.row
                             div.col
-                                img.rounded-circle(src='http://placehold.it/50x50')
+                                img.rounded-circle.comment-img(src='http://placehold.it/50x50')
                             div.col
-                                small.text-muted #{comment.user.firstname} | #{moment(comment.updatedAt).fromNow()}
+                                small.text-muted
+                                    span.comment-user #{comment.user.firstname} #{comment.user.lastname}
+                                    span  |
+                                    span.comment-date #{moment(comment.updatedAt).fromNow()}
                                 div.comment-content !{comment.content}
                     else
                         i.text-muted No comments !
-
-                    //div.comment.row
-                    //    div.col
-                    //        img.rounded-circle(src='http://placehold.it/50x50')
-                    //    div.col
-                    //        small.text-muted Jules LAURENT | Il y a deux jours
-                    //        div.comment-content
-                    //            p Lorem ipsum dolor sit amet consecture adipsis eco plus7
-                    //                | ipsum dolor sit amet consecture adipsis eco plus7
-                    //                | ipsum dolor sit amet consecture adipsis eco plus7
-                    //                | ipsum dolor sit amet consecture adipsis eco plus7
-                    //                | ipsum dolor sit amet consecture adipsis eco plus7
-                    //div.comment.row
-                    //    div.col
-                    //        img.rounded-circle(src='http://placehold.it/50x50')
-                    //    div.col
-                    //        small.text-muted Jules LAURENT | Il y a deux jours
-                    //        div.comment-content
-                    //            p Lorem ipsum dolor sit amet consecture adipsis eco plus7
             .card
                 .card-body
                     div Vous connaisez quelqu'un qui peut répondre ? Partagez le lien !
