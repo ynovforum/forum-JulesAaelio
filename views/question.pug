@@ -20,7 +20,7 @@ block content
                     div 2 answers
 
             .card.followed
-                .card-body
+                .card-body.comments
                     for comment in question.comments
                         div.comment.row
                             div.col
@@ -33,13 +33,26 @@ block content
                                 div.comment-content !{comment.content}
                     else
                         i.text-muted No comments !
+                        div.comment.row.template
+                            div.col
+                                img.rounded-circle.comment-img(src='http://placehold.it/50x50')
+                            div.col
+                                small.text-muted
+                                    span.comment-user }
+                                    span  |
+                                    span.comment-date
+                                div.comment-content
             .card
                 .card-body
-                    div Vous connaisez quelqu'un qui peut répondre ? Partagez le lien !
-                    label(for='new-comment-field')
-                        small.form-text.text-muted  Votre réponse
-                    textarea(name='comment' id="new-comment-field").form-control
-                    button.btn.btn-success.float-right Répondre
+                    if user
+                        div Vous connaisez quelqu'un qui peut répondre ? Partagez le lien !
+                        label(for='new-comment-field')
+                            small.form-text.text-muted  Votre réponse
+                        textarea(name='comment' id="new-comment-field").form-control
+                        button.btn.btn-success.float-right#new-comment-btn Répondre
+                    else
+                        div Pour commenter,
+                            a(href='/login?redirectTo='+url) connectez-vous!
 
 
         div.col.col-side
@@ -65,4 +78,6 @@ block content
             .card.darken
                 .card-body
                     a(href='#').text-center Need more help ? Click here !
+    block scripts
+        script(src="/scripts/question.min.js")
 

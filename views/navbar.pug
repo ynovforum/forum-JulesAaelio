@@ -21,4 +21,4 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-primary.fixed-top
                         a.dropdown-item(href='/logout') Se déconnecter
             else
                 li.nav-item
-                    a(href="/login").btn.btn-success Se connecter
+                    a(href="/login?redirectTo="+url).btn.btn-success Se connecter
