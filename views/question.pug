@@ -11,7 +11,7 @@ block content
                             input.h2(value=question.title disabled).question-title
                             //h3 #{question.title}
 
-                            small.text-muted #{question.user.firstname} #{question.user.lastname}
+                            small.text-muted #{question.user.firstname} #{question.user.lastname} | #{moment(question.createdAt).fromNow()}
                         div.col
                             if(user && user.id === question.user.id)
                                 span.fa.fa-pencil-alt.fa-xs.fa-fw.text-muted(data-id=question.id).edit-question
