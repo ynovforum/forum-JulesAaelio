@@ -11,7 +11,7 @@ block content
                             input.h2(value=question.title disabled).question-title
                             //h3 #{question.title}
 
-                            small #{question.user.firstname} #{question.user.lastname}
+                            small.text-muted #{question.user.firstname} #{question.user.lastname}
                         div.col
                             if(user && user.id === question.user.id)
                                 span.fa.fa-pencil-alt.fa-xs.fa-fw.text-muted(data-id=question.id).edit-question
@@ -25,7 +25,7 @@ block content
                         div.col
                             img.rounded-circle(src='http://placehold.it/50x50')
                         div.col
-                            small Jules LAURENT | Il y a deux jours
+                            small.text-muted Jules LAURENT | Il y a deux jours
                             div.comment-content
                                 p Lorem ipsum dolor sit amet consecture adipsis eco plus7
                                     | ipsum dolor sit amet consecture adipsis eco plus7
@@ -36,7 +36,7 @@ block content
                         div.col
                             img.rounded-circle(src='http://placehold.it/50x50')
                         div.col
-                            small Jules LAURENT | Il y a deux jours
+                            small.text-muted Jules LAURENT | Il y a deux jours
                             div.comment-content
                                 p Lorem ipsum dolor sit amet consecture adipsis eco plus7
             .card
@@ -46,6 +46,27 @@ block content
                         small.form-text.text-muted  Votre réponse
                     textarea(name='comment' id="comment-field").form-control
 
-        div.col.col-side.card
-            .card-body
-                h1 TEST
+        div.col.col-side
+            .card.followed.darken
+                .card-body
+                    h3
+                        i.fa.fa-life-ring.fa-fw
+                        |Tips for asking questions
+                    p
+                        small.text-muted
+                            | Every question you ask should help you gather either facts or an opinion.
+                            | Know which kind of information you need and frame your questions accordingly.
+            .card.followed.darken
+                .card-body
+                    h3
+                        i.fa.fa-life-ring.fa-fw
+                        | Search & Research
+                    p
+                        small.text-muted
+                            | Every question you ask should help you gather either facts or an opinion.
+                            | Know which kind of information you need and frame your questions accordingly.
+
+            .card.darken
+                .card-body
+                    a(href='#').text-center Need more help ? Click here !
+

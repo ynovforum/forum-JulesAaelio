@@ -9,6 +9,10 @@
   border-bottom-right-radius:0;
 }
 
-.card-body > :not(p):not(.row) {
+.card-body > :not(p):not(.row):not(h1):not(h2):not(h3) {
   margin-left: 14px;
+}
+
+.card.darken {
+  background-color: $background-grey;
 }
