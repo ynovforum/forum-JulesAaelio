@@ -14,7 +14,8 @@ let babel = require('gulp-babel');
 gulp.task('cpscripts',() => {
     return gulp.src(
         ["./node_modules/bootstrap/dist/js/bootstrap.min.js",
-            "./node_modules/jquery/dist/jquery.min.js"
+            "./node_modules/jquery/dist/jquery.min.js",
+            "./node_modules/moment/min/moment.min.js"
         ])
         .pipe(gulp.dest("./public/scripts/"));
 });
