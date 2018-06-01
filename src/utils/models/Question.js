@@ -6,9 +6,13 @@ module.exports = (db) => {
         description : { type: sequelize.DataTypes.TEXT },
         resolvedAt : { type : sequelize.DataTypes.DATE}
     });
-    Question.associate = ({Question,User}) => {
+    Question.associate = ({Question,User,Comment}) => {
         Question.belongsTo(User);
         User.hasMany(Question);
+        Question.belongsTo(Comment,{
+            as: 'acceptedAnswer',
+            constraints: false, allowNull:true,
+        })
     };
     return Question;
 };
