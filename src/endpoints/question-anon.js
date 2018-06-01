@@ -6,7 +6,14 @@ module.exports = (db) => {
             db.Question.findById(
                 req.params.id,
                 {
-                    include: [db.User]
+                    include: [
+                        {
+                            model: db.User
+                        }, {
+                            model: db.Comment,
+                            include: [db.User]
+                        }
+                        ]
                 }).then(question => {
                     if (question) {
                         res.render('question', {
