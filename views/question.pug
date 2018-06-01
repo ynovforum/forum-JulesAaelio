@@ -32,7 +32,7 @@ block content
                                     span.comment-date #{moment(comment.updatedAt).fromNow()}
                                 div.comment-content !{comment.content}
                             div.col
-                                button.btn.btn-success.expandable.accept(data-id=comment.id)
+                                button.btn.btn-success.expandable.comment-accept(data-id=comment.id)
                                     small.fa.fa-check.fa-xs.fa-fw
                                     span.toexpand Accepter
                     else

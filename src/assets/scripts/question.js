@@ -12,3 +12,10 @@ $('#new-comment-btn').click(e => {
         $('.comments').append(newcomment);
     })
 });
+
+$('.comment').click(e => {
+    let commentId = $(e.target).attr('data-id');
+    $.post(window.location.href + '/comment/' + commentId + '/accept',{}).done((r) => {
+        alert(r);
+    })
+});
