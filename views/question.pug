@@ -25,12 +25,16 @@ block content
                         div.comment.row
                             div.col
                                 img.rounded-circle.comment-img(src='http://placehold.it/50x50')
-                            div.col
+                            div.col.col-expand
                                 small.text-muted
                                     span.comment-user #{comment.user.firstname} #{comment.user.lastname}
                                     span  |
                                     span.comment-date #{moment(comment.updatedAt).fromNow()}
                                 div.comment-content !{comment.content}
+                            div.col
+                                button.btn.btn-success.expandable
+                                    small.fa.fa-check.fa-xs.fa-fw
+                                    span.toexpand Accepter
                     else
                         i.text-muted No comments !
                         div.comment.row.template
