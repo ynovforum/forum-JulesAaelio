@@ -17,34 +17,28 @@ block content
                                 span.fa.fa-pencil-alt.fa-xs.fa-fw.text-muted(data-id=question.id).edit-question
                     div.card-text.question-description
                         | !{question.description}
-                    div 2 answers
+                    div #{question.comments.length} answers
 
             .card.followed
-                .card-body
-                    div.comment.row
-                        div.col
-                            img.rounded-circle(src='http://placehold.it/50x50')
-                        div.col
-                            small.text-muted Jules LAURENT | Il y a deux jours
-                            div.comment-content
-                                p Lorem ipsum dolor sit amet consecture adipsis eco plus7
-                                    | ipsum dolor sit amet consecture adipsis eco plus7
-                                    | ipsum dolor sit amet consecture adipsis eco plus7
-                                    | ipsum dolor sit amet consecture adipsis eco plus7
-                                    | ipsum dolor sit amet consecture adipsis eco plus7
-                    div.comment.row
-                        div.col
-                            img.rounded-circle(src='http://placehold.it/50x50')
-                        div.col
-                            small.text-muted Jules LAURENT | Il y a deux jours
-                            div.comment-content
-                                p Lorem ipsum dolor sit amet consecture adipsis eco plus7
+                .card-body.comments
+                    for comment in question.comments
+                        include fragments/comment
+                    else
+                        i.text-muted#no-comments No comments !
+                        - var comment = empty_comment;
+                        include fragments/comment
             .card
                 .card-body
-                    div Vous connaisez quelqu'un qui peut répondre ? Partagez le lien !
-                    label(for='comment-field')
-                        small.form-text.text-muted  Votre réponse
-                    textarea(name='comment' id="comment-field").form-control
+                    if user
+                        div Vous connaisez quelqu'un qui peut répondre ? Partagez le lien !
+                        label(for='new-comment-field')
+                            small.form-text.text-muted  Votre réponse
+                        textarea(name='comment' id="new-comment-field").form-control
+                        button.btn.btn-success.float-right#new-comment-btn Répondre
+                    else
+                        div Pour commenter,
+                            a(href='/login?redirectTo='+url) connectez-vous!
+
 
         div.col.col-side
             .card.followed.darken
@@ -69,4 +63,6 @@ block content
             .card.darken
                 .card-body
                     a(href='#').text-center Need more help ? Click here !
+    block scripts
+        script(src="/scripts/question.min.js")
 

@@ -5,6 +5,7 @@ module.exports = (app) => {
             res.locals.user = req.user;
         }
         res.locals.moment = moment;
+        res.locals.url  = req.originalUrl;
         next();
     });
 

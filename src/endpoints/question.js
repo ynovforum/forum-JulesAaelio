@@ -1,4 +1,5 @@
 const express = require('express');
+
 module.exports = (db) => {
     const router = express.Router();
     router.route('/add')
@@ -42,6 +43,8 @@ module.exports = (db) => {
         });
 
     });
+
+    router.use('/:questionId/comment',require('./comments')(db));
 
     return router;
 };
