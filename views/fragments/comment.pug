@@ -8,6 +8,9 @@ div.comment.row(class={template : comment.template})
             span.comment-date #{moment(comment.updatedAt).fromNow()}
         div.comment-content !{comment.content}
     div.col
-        button.btn.btn-success.expandable.comment-accept(data-id=comment.id)
-            small.fa.fa-check.fa-xs.fa-fw
-            span.toexpand Accepter
+        if(question.acceptedAnswerId === null)
+            button.btn.btn-success.expandable.comment-accept(data-id=comment.id)
+                small.fa.fa-check.fa-xs.fa-fw
+                span.toexpand Accepter
+        if(comment.id === question.acceptedAnswerId)
+            i.fa.fa-check.text-sucess
