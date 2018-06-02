@@ -17,7 +17,7 @@ block content
                                 span.fa.fa-pencil-alt.fa-xs.fa-fw.text-muted(data-id=question.id).edit-question
                     div.card-text.question-description
                         | !{question.description}
-                    div 2 answers
+                    div #{question.comments.length} answers
 
             .card.followed
                 .card-body.comments
