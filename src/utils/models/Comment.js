@@ -2,7 +2,7 @@ const sequelize = require('sequelize');
 
 module.exports = (db) => {
     const Comment = db.define('comment', {
-        content : { type: sequelize.DataTypes.STRING }
+        content : { type: sequelize.DataTypes.TEXT }
     });
     Comment.associate = ({Comment,Question,User}) => {
         Comment.belongsTo(User);
