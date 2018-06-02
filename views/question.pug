@@ -24,7 +24,7 @@ block content
                     for comment in question.comments
                         include fragments/comment
                     else
-                        i.text-muted No comments !
+                        i.text-muted#no-comments No comments !
                         - var comment = empty_comment;
                         include fragments/comment
             .card

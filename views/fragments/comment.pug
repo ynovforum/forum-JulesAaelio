@@ -1,5 +1,5 @@
 div.comment.row(class={template : comment.template})
-    div.col
+    div.col.accepted-mark-container(data-id=comment.id)
         img.rounded-circle.comment-img(src='http://placehold.it/50x50')
         if(comment.id === question.acceptedAnswerId)
             div.fa.fa-check.text-success.fa-2x.text-center

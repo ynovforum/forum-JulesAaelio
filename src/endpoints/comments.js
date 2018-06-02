@@ -37,6 +37,7 @@ module.exports = (db) => {
                 db.Question.findById(c.questionId).then(q => {
                     q.setAcceptedAnswer(c);
                     q.save();
+                    res.send(c);
                 })
             }else {
                 next();

@@ -10,12 +10,17 @@ $('#new-comment-btn').click(e => {
         newcomment.find('.comment-content').html(r.content);
         newcomment.removeClass('template');
         $('.comments').append(newcomment);
+        $('#no-comments').hide();
     })
 });
 
-$('.comment').click(e => {
+let acceptToggles = $('.comment-accept');
+console.log(acceptToggles);
+acceptToggles.click(e => {
     let commentId = $(e.target).attr('data-id');
     $.post(window.location.href + '/comment/' + commentId + '/accept',{}).done((r) => {
-        alert(r);
+        console.log(r);
+        acceptToggles.hide();
+        $('.accepted-mark-container[data-id='+commentId+']').append('<div class="fa fa-check fa-2x text-center text-success"></div>')
     })
 });
