@@ -22,30 +22,11 @@ block content
             .card.followed
                 .card-body.comments
                     for comment in question.comments
-                        div.comment.row
-                            div.col
-                                img.rounded-circle.comment-img(src='http://placehold.it/50x50')
-                            div.col.col-expand
-                                small.text-muted
-                                    span.comment-user #{comment.user.firstname} #{comment.user.lastname}
-                                    span  |
-                                    span.comment-date #{moment(comment.updatedAt).fromNow()}
-                                div.comment-content !{comment.content}
-                            div.col
-                                button.btn.btn-success.expandable.comment-accept(data-id=comment.id)
-                                    small.fa.fa-check.fa-xs.fa-fw
-                                    span.toexpand Accepter
+                        include fragments/comment
                     else
                         i.text-muted No comments !
-                        div.comment.row.template
-                            div.col
-                                img.rounded-circle.comment-img(src='http://placehold.it/50x50')
-                            div.col
-                                small.text-muted
-                                    span.comment-user }
-                                    span  |
-                                    span.comment-date
-                                div.comment-content
+                        - var comment = empty_comment;
+                        include fragments/comment
             .card
                 .card-body
                     if user

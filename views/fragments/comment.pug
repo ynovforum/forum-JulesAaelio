@@ -1,0 +1,13 @@
+div.comment.row(class={template : comment.template})
+    div.col
+        img.rounded-circle.comment-img(src='http://placehold.it/50x50')
+    div.col.col-expand
+        small.text-muted
+            span.comment-user #{comment.user.firstname} #{comment.user.lastname}
+            span  |
+            span.comment-date #{moment(comment.updatedAt).fromNow()}
+        div.comment-content !{comment.content}
+    div.col
+        button.btn.btn-success.expandable.comment-accept(data-id=comment.id)
+            small.fa.fa-check.fa-xs.fa-fw
+            span.toexpand Accepter
