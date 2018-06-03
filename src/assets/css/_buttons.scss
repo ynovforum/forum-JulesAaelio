@@ -1,0 +1,23 @@
+.btn.expandable {
+  display: flex;
+  align-items: center;
+  .toexpand {
+      width: 0;
+      overflow: hidden;
+      display: flex;
+  }
+  &:hover .toexpand {
+    animation-name: expand;
+    animation-fill-mode: forwards;
+    animation-duration: 0.5s;
+    height:auto;
+  }
+}
+
+@keyframes expand {
+  from {width: 0;}
+  to {
+    width: 100%;
+    overflow: visible;
+  }
+}

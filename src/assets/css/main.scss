@@ -1,0 +1,45 @@
+@import "colors";
+@import "variables";
+@import "bootstrap";
+@import "fonts";
+@import "forms";
+@import "error";
+@import "navbar";
+@import "container";
+@import "login";
+@import "cards";
+@import "buttons";
+@import "badges";
+
+body {
+  background-color: $background;
+}
+
+.container {
+  margin-top: 99px;
+}
+
+.card-up-icon {
+  margin-top: -10%;
+  color: $primary;
+  margin-bottom: 14px;
+}
+
+.template {
+  visibility: hidden;
+  position: absolute;
+  top : -2000;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.img-fit {
+  width: 100%;
+  height: auto;
+}

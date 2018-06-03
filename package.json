@@ -2,36 +2,49 @@
   "name": "forum-julesaaelio",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "gulpfile.js",
   "scripts": {
     "test": "gulp serve"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NodeCourse/forum-JulesAaelio.git"
+    "url": "git+https://github.com/ynovforum/forum-JulesAaelio.git"
   },
-  "author": "Jules Aaelio",
+  "author": "Jules LAURENT",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/NodeCourse/forum-JulesAaelio/issues"
+    "url": "https://github.com/ynovforum/forum-JulesAaelio/issues"
   },
-  "homepage": "https://github.com/NodeCourse/forum-JulesAaelio#readme",
+  "homepage": "https://github.com/ynovforum/forum-JulesAaelio#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "browser-sync": "^2.24.4",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-babel": "^7.0.1",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-nodemon": "^2.2.1",
+    "gulp-rename": "^1.2.3",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.0"
+  },
   "dependencies": {
     "bcrypt": "^2.0.1",
     "body-parser": "^1.18.3",
-    "browser-sync": "^2.24.4",
+    "bootstrap": "^4.1.1",
     "cookie-parser": "^1.4.3",
     "express": "^4.16.3",
     "express-session": "^1.15.6",
-    "gulp": "^3.9.1",
-    "gulp-nodemon": "^2.2.1",
     "jquery": "^3.3.1",
-    "materialize-css": "^0.100.2",
+    "moment": "^2.22.2",
     "mysql2": "^1.5.3",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "pug": "^2.0.3",
-    "sequelize": "^4.37.7"
-  },
-  "devDependencies": {}
+    "sequelize": "^4.37.10",
+    "sequelize-require-models": "^0.1.0",
+    "tinymce": "^4.7.13"
+  }
 }

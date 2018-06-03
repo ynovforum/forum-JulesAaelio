@@ -1,0 +1,20 @@
+.row.v-spaced
+    .col.col-expand
+        .card
+            .card-body
+                .row.align-items-center
+                    .col
+                        img(src='http://placehold.it/50x50').rounded-circle
+                    .col.col-expand
+                        div #{single_user.firstname}  #{single_user.lastname}
+                        small.text-muted.user-role(data-id=single_user.id) #{single_user.role === 'ADMIN' ? 'Administrateur' : 'Utilisateur'}
+                    .col.col-md-2
+                        div #{single_user.questions.length}
+                        small.text-muted Questions
+
+                    .col.col-md-2
+                        if(single_user.id !== user.id)
+                            if(single_user.role !== 'ADMIN')
+                                button.btn.btn-danger.text-white.promote-btn(data-id=single_user.id) Promote
+                            else
+                                button.btn.btn-primary.demote-btn(data-id=single_user.id) Demote
