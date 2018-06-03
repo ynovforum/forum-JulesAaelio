@@ -8,9 +8,7 @@ block content
                         div.col
                             img.rounded-circle(src='http://placehold.it/50x50')
                         div.col.col-expand
-                            input.h2(value=question.title disabled).question-title
-                            //h3 #{question.title}
-
+                            h1 #{question.title}
                             small.text-muted #{question.user.firstname} #{question.user.lastname} | #{moment(question.createdAt).fromNow()}
                         div.col
                             if(user && user.id === question.user.id)
@@ -36,7 +34,7 @@ block content
                         textarea(name='comment' id="new-comment-field").form-control
                         button.btn.btn-success.float-right#new-comment-btn Répondre
                     else
-                        div Pour commenter,
+                        div Pour commenter
                             a(href='/login?redirectTo='+url) connectez-vous!
 
 

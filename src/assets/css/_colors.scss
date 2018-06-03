@@ -1,23 +1,34 @@
-$menu-item: #00AEEF;
-$logo-hover: #FECF39;
-$label-topbar: #FFDF6D;
-$label-picture : #dbdbdb;
-$search-box: #81736a;
-$violet : #8781bd;
-$success-max: #00797A;
-$success-link: #74c7a8;
-$error-link: #ffa2ad;
-$profile-bar: #00aeef;
-$link: $profile-bar;
 $link-clicked: #009AD4;
-$text: #393c3e;
-$text-light: #71787e;
-$background: #eff3f6;
 $input-empty: #dfe3e9;
 $input-basic: #8c98a9;
-$btn-primary: #1071bb;
-$success: #26b10f;
-$danger: #ed1c24;
-$background-grey: #fafbfc;
 
-$primary: $menu-item;
+
+$l-black : #393c3e;
+$grey:  #71787e;
+$l-grey: #fafbfc;
+$vl-grey : #e6eaee;
+$white: #fff;
+$violet : #8781bd;
+$green: #26b10f;
+$red: #ed1c24;
+$l-blue: #00aeef;
+
+$primary: $l-blue;
+$success: $green;
+$danger: $red;
+$text: $l-black;
+$text-light:$grey;
+$link: $l-blue;
+
+
+$background: #eff3f6;
+$menu-item: $l-blue;
+$profile-bar: $l-blue;
+
+
+
+
+
+
+
+

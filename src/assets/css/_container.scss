@@ -11,8 +11,8 @@
 .col {
   display: flex;
   flex-direction: column;
-  margin-left: 14px;
-  margin-right: 14px;
+  margin-left: $col-spacing;
+  margin-right: $col-spacing;
 }
 
 .col-expand {
@@ -20,21 +20,20 @@
 }
 
 @include media-breakpoint-up(md) {
-  $default-padding: 14px;
   $container-width: 1165px;
   $container-small-width: 995px;
-  $side-width: (25/100 * $container-width) - ($default-padding *2);
+  $side-width: (25/100 * $container-width) - ($col-spacing *2);
   .container {
     max-width: $container-width;
   }
 
   .col-main {
-    width: (75/100 * $container-width) - ($default-padding*2) ;
+    width: (75/100 * $container-width) - ($col-spacing*2) ;
   }
 
   .col-side {
     width: $side-width ;
-    right: $side-width - 2*$default-padding;
+    right: $side-width - 2*$col-spacing;
   }
 
   @for $i from 1 through 10 {
@@ -45,15 +44,16 @@
 
   .container-small {
     max-width: $container-small-width;
-    $small-side-width: (35/100 * $container-small-width) - ($default-padding *2);
+    $small-side-width: (35/100 * $container-small-width) - ($col-spacing *2);
     .col-main {
-      width: (65/100 * $container-small-width) - ($default-padding*2) ;
+      width: (65/100 * $container-small-width) - ($col-spacing*2) ;
     }
 
     .col-side {
       width: $small-side-width ;
-      right: $small-side-width - 2*$default-padding;
+      right: $small-side-width - 2*$col-spacing;
     }
   }
 
 }
+

@@ -1,73 +1,105 @@
-h1,.h1, a {
+%global-font {
   font-family: "Source Sans Pro",sans-serif;
-  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: $text;
 }
 
-h2, .h2,  h3, .h3 p, .p, footer {
-  font-family: "Source Sans Pro",sans-serif;
+%bold {
+  font-weight:600;
+}
+
+%regular {
   font-weight: 400;
 }
 
-a {
-  color: $link;
-  font-size: 16px;
-  line-height: 24px;
-}
-
-a:visited, a:hover {
-  color: $link-clicked;
-}
-
-h1,.h1 {
+@mixin h1() {
+  @extend %global-font;
+  @extend %regular;
   font-size: 32px;
   line-height: 44px;
 }
 
-h2, .h2 {
-  font-size: 22px;
-  line-height: 32px;
+
+a {
+  @extend %global-font;
+  @extend %bold;
+  color: $link;
+  font-size: 16px;
+  line-height: 24px;
+
+  &:visited, &:hover {
+    color: $link-clicked;
+  }
+
+  &.vanilla {
+    color:$text;
+
+    &:visited, &:hover {
+      text-decoration: none;
+      color:$text;
+    }
+
+
+  }
 }
 
-h3,.h3 {
+@mixin h2() {
+  @extend %global-font;
+  @extend %regular;
+  font-size: 22px;
+  line-height: 32px;
+  h1 + & {
+    margin-top: 20px;
+  }
+
+}
+
+@mixin h3() {
+  @extend %global-font;
+  @extend %regular;
   font-size: 20px;
   line-height: 28px;
 }
 
-p, .p{
+
+@mixin p() {
+  @extend %global-font;
+  @extend %regular;
   font-size: 16px;
   line-height: 24px;
+  margin-top: 20px;
+  h1 + & {
+    margin-top: 30px;
+  }
 }
+
+h1, .h1 {
+  @include h1();
+}
+
+h2, .h2 {
+  @include h2();
+}
+
+h3, .h3 {
+  @include h3();
+}
+
+p {
+  @include p();
+}
+
+small {
+  h1 + & {
+    margin-top: -6px;
+  }
+}
+
 
 footer {
   font-size: 14px;
   line-height: 22px;
-}
-
-h1,.h1, h2, .h2,h3,p ,.p,.h3{
-  margin-top: 0;
-}
-
-h1+p, .h1+p{
-  margin-bottom: 36px;
-}
-
-h2 {
-  margin-bottom: 30px;
-}
-
-h3, .h3{
-  margin-bottom: .5rem;
-}
-h1+h2, .h1+h2, h1+.h2, .h1+.h2  {
-  margin-bottom: 26px;
-}
-
-input.h1, input.h2, input.h3 {
-  margin-bottom: 0;
-}
-
-p {
-  padding-top: 14px;
 }
 
 .fa-fw {
