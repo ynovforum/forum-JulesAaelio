@@ -1,0 +1,41 @@
+$link-clicked: #009AD4;
+$input-empty: #dfe3e9;
+$input-basic: #8c98a9;
+
+
+$l-black : #393c3e;
+$grey:  #71787e;
+$l-grey: #fafbfc;
+$vl-grey : #e6eaee;
+$white: #fff;
+$violet : #8781bd;
+$green: #38b449;
+$red: #ed1c24;
+$l-blue: #00aeef;
+
+$primary: $l-blue;
+$success: $green;
+$danger: $red;
+$text: $l-black;
+$text-light:$grey;
+$link: $l-blue;
+
+$themed-colors: (
+  'primary':$primary,
+  'success':$success,
+  'danger':$danger,
+  'grey':$grey,
+  'white':$white,
+);
+
+$background: #eff3f6;
+$menu-item: $l-blue;
+$profile-bar: $l-blue;
+
+
+
+
+
+
+
+

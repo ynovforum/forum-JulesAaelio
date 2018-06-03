@@ -1,0 +1,10 @@
+div.col.col-md-5
+    .card
+        .card-body
+            img.img-fit(src='https://placehold.it/400x200')
+            div.row.align-items-center
+                div.col.col-expand
+                    h3 #{question.title}
+                    small.text-muted #{question.user.firstname + ' ' + question.user.lastname}  |  #{moment(question.createdAt).fromNow()}
+                div.col
+                    a(href="/question/"+question.id).btn.btn-success Voir

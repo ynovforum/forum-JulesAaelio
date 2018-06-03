@@ -1,11 +1,24 @@
-nav
-    .nav-wrapper
-        a(href='/').brand-logo
-            img(src='/images/jlt.png' height='38px' width='auto')
+nav.navbar.navbar-expand-lg.navbar-dark.bg-primary.fixed-top
+    a.navbar-brand
+        img(src='/images/jlt.png' height='38px' width='auto')
+    button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+    #navbarNav.collapse.navbar-collapse
+        ul.navbar-nav
+            li.nav-item.active
+                a.nav-link(href='#')
+                    | Home
+                    span.sr-only (current)
 
-        ul.right
+
+        ul.navbar-nav.ml-auto
             if user
-                li
-                    a(href='#')
-                        i.fa.fa-user.fa-fw
-                        span #{user.firstname} #{user.lastname}
+                li.nav-item.dropdown
+                    a#navbarDropdownMenuLink.nav-link.dropdown-toggle(href='#', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                        img.rounded-circle(src="http://placehold.it/40x40")
+                    .dropdown-menu.dropdown-menu-right(aria-labelledby='navbarDropdownMenuLink')
+                        a.dropdown-header #{user.firstname} #{user.lastname}
+                        a.dropdown-item(href='/logout') Se déconnecter
+            else
+                li.nav-item
+                    a(href="/login?redirectTo="+url).btn.btn-success Se connecter

@@ -1,0 +1,26 @@
+extends base
+block content
+    div
+        div.row
+            div.col.col-expand
+                h2 Dernières questions
+        if(featured_questions.length >= 2)
+            div.row.v-spaced
+                for question in featured_questions
+                    include fragments/featured_question
+
+        div.row.v-spaced
+            div.col.col-expand
+                .card
+                    .card-stack
+                        h1 Toutes les questions | #{questions.length} questions
+                    .card-stack.darken
+                        div.row
+                            div.col.col-md-3 Question
+                            div.col.col-md-3 Date
+                            div.col.col-md-2 Status
+                            div.col.col-md-2 Lien
+                    for question in questions
+                        .card-stack
+                            include fragments/question-row
+

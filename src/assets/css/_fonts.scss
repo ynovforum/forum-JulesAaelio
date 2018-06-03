@@ -1,0 +1,112 @@
+%global-font {
+  font-family: "Source Sans Pro",sans-serif;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: $text;
+}
+
+%bold {
+  font-weight:600;
+}
+
+%regular {
+  font-weight: 400;
+}
+
+@mixin h1() {
+  @extend %global-font;
+  @extend %regular;
+  font-size: 32px;
+  line-height: 44px;
+}
+
+
+a {
+  @extend %global-font;
+  @extend %bold;
+  color: $link;
+  font-size: 16px;
+  line-height: 24px;
+
+  &:visited, &:hover {
+    color: $link-clicked;
+  }
+
+  &.vanilla {
+    color:$text;
+
+    &:visited, &:hover {
+      text-decoration: none;
+      color:$text;
+    }
+
+
+  }
+}
+
+@mixin h2() {
+  @extend %global-font;
+  @extend %regular;
+  font-size: 22px;
+  line-height: 32px;
+  h1 + & {
+    margin-top: 20px;
+  }
+}
+
+@mixin h3() {
+  @extend %global-font;
+  @extend %regular;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+
+@mixin p() {
+  @extend %global-font;
+  @extend %regular;
+  font-size: 16px;
+  line-height: 24px;
+
+  h1 + & {
+    margin-top: 30px;
+  }
+}
+
+h1, .h1 {
+  @include h1();
+}
+
+h2, .h2 {
+  @include h2();
+}
+
+h3, .h3 {
+  @include h3();
+}
+
+p {
+  @include p();
+}
+
+small {
+  h1 + & {
+    margin-top: -6px;
+  }
+}
+
+
+footer {
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.fa-fw {
+  padding-right: 14px;
+}
+
+@each $color, $value in $themed-colors {
+  .text-#{$color} {
+    color: $value;
+  }
+}

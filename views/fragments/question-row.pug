@@ -1,0 +1,14 @@
+div.row.align-items-center
+    div.col.col-md-3
+        div #{question.title}
+        small.text-muted #{question.user.firstname + ' ' + question.user.lastname}
+    div.col.col-md-3
+        div #{moment(question.createdAt).fromNow()}
+    div.col.col-md-2
+        if question.acceptedAnswerId !== null
+            div.badge.badge-primary Résolue
+
+        else
+            div.badge.badge-danger Ouverte
+    div.col.col.col-md-2
+        a(href="/question/"+question.id).btn.btn-success Voir

@@ -1,0 +1,11 @@
+extends base
+block content
+    .row.spaced
+        .col.col-expand
+            h2 Utilisateurs
+    for single_user in users
+        include fragments/user-row
+    else
+        div No users !
+    block scripts
+        script(src='/scripts/user-list.min.js')

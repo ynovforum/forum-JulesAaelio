@@ -1,0 +1,68 @@
+.container {
+  margin: auto;
+}
+
+.row {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  &.v-spaced {
+    margin-top: $col-v-spacing;
+  }
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  margin-left: $col-spacing;
+  margin-right: $col-spacing;
+}
+
+.col-expand {
+  flex-grow: 1
+}
+
+@include media-breakpoint-up(md) {
+  $container-width: 1165px;
+  $container-small-width: 995px;
+  $side-width: (25/100 * $container-width) - ($col-spacing *2);
+  .container {
+    max-width: $container-width;
+  }
+
+  .col-main {
+    width: (75/100 * $container-width) - ($col-spacing*2) ;
+  }
+
+  .col-side {
+    width: $side-width ;
+    right: $side-width - 2*$col-spacing;
+  }
+
+  @for $i from 1 through 10 {
+    .col-md-#{$i} {
+      width: percentage($i/10);
+    }
+  }
+
+  @for $i from 1 through 10 {
+    .col-fixed-#{$i} {
+      width: $container-width*($i/10);
+    }
+  }
+
+  .container-small {
+    max-width: $container-small-width;
+    $small-side-width: (35/100 * $container-small-width) - ($col-spacing *2);
+    .col-main {
+      width: (65/100 * $container-small-width) - ($col-spacing*2) ;
+    }
+
+    .col-side {
+      width: $small-side-width ;
+      right: $small-side-width - 2*$col-spacing;
+    }
+  }
+
+}
+
