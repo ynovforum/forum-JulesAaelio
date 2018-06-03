@@ -42,6 +42,7 @@ input,textarea {
       background: none;
     }
   }
+
 }
 
 
@@ -54,7 +55,7 @@ input,textarea {
   }
 }
 
-input,textarea, div.mce-tinymce {
+.form-group, div.mce-tinymce {
   margin-bottom: 10px;
 }
 

@@ -22,6 +22,7 @@
 @include media-breakpoint-up(md) {
   $default-padding: 14px;
   $container-width: 1165px;
+  $container-small-width: 995px;
   $side-width: (25/100 * $container-width) - ($default-padding *2);
   .container {
     max-width: $container-width;
@@ -39,6 +40,19 @@
   @for $i from 1 through 10 {
     .col-md-#{$i} {
       width: $container-width*($i/10);
+    }
+  }
+
+  .container-small {
+    max-width: $container-small-width;
+    $small-side-width: (35/100 * $container-small-width) - ($default-padding *2);
+    .col-main {
+      width: (65/100 * $container-small-width) - ($default-padding*2) ;
+    }
+
+    .col-side {
+      width: $small-side-width ;
+      right: $small-side-width - 2*$default-padding;
     }
   }
 

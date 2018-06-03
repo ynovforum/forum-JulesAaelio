@@ -7,8 +7,9 @@ html
         block links
     body
         include navbar.pug
-        main.container
-            block content
+        block main
+            main.container
+                block content
         script(src="/scripts/jquery.min.js")
         script(src="/scripts/bootstrap.min.js")
         script(src="/scripts/tinymce/tinymce.min.js")
