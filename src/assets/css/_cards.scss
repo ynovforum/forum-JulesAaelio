@@ -9,10 +9,25 @@
   border: 1px solid $vl-grey;
   border-radius: .25rem;
 
-  .card-body {
+  .card-body, .card-stack {
     flex: 1 1 auto;
     padding: $default-padding;
   }
+
+  .card-stack {
+    border-radius: 0;
+    &:first-of-type {
+      border-top-left-radius: .25rem;
+      border-top-right-radius: .25rem;
+    }
+
+    &:last-of-type {
+      border-bottom-left-radius:.25rem;
+      border-bottom-right-radius:.25rem;
+    }
+  }
+
+
 }
 
 .card + .card {
@@ -26,10 +41,6 @@
   border-bottom-right-radius:0;
 }
 
-.card-body > :not(p):not(.row):not(h1):not(h2):not(h3) {
-  margin-left: 14px;
-}
-
-.card.darken {
+.darken {
   background-color: $l-grey;
 }

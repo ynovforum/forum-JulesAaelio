@@ -6,6 +6,9 @@
   margin: 0;
   padding: 0;
   display: flex;
+  &.v-spaced {
+    margin-top: $col-v-spacing;
+  }
 }
 
 .col {
@@ -38,6 +41,12 @@
 
   @for $i from 1 through 10 {
     .col-md-#{$i} {
+      width: percentage($i/10);
+    }
+  }
+
+  @for $i from 1 through 10 {
+    .col-fixed-#{$i} {
       width: $container-width*($i/10);
     }
   }

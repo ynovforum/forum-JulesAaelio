@@ -13,9 +13,11 @@ block content
                         div.col
                             if(user && user.id === question.user.id)
                                 span.fa.fa-pencil-alt.fa-xs.fa-fw.text-muted(data-id=question.id).edit-question
-                    div.card-text.question-description
-                        | !{question.description}
-                    div #{question.comments.length} answers
+                    div.row
+                        div.col.col-expand
+                            div.card-text.question-description
+                                | !{question.description}
+                            div #{question.comments.length} answers
 
             .card.followed
                 .card-body.comments
