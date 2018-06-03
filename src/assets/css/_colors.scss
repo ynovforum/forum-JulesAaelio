@@ -9,7 +9,7 @@ $l-grey: #fafbfc;
 $vl-grey : #e6eaee;
 $white: #fff;
 $violet : #8781bd;
-$green: #26b10f;
+$green: #38b449;
 $red: #ed1c24;
 $l-blue: #00aeef;
 
@@ -20,6 +20,12 @@ $text: $l-black;
 $text-light:$grey;
 $link: $l-blue;
 
+$themed-colors: (
+  'primary':$primary,
+  'success':$success,
+  'danger':$danger,
+  'grey':$grey,
+);
 
 $background: #eff3f6;
 $menu-item: $l-blue;

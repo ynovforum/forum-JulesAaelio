@@ -34,5 +34,48 @@ module.exports = (db) => {
                     }
             });
         });
+
+    router.get('/list',(req,res,next) => {
+        let questions_all;
+        db.Question.findAll({
+            order: [
+                ['createdAt','DESC'],
+            ],
+            where: {
+              acceptedAnswerId: {
+                  [db.db.Op.ne]: null
+              }
+            },
+            include: [db.User]
+        }).then(questions => {
+            questions_all = questions;
+        }).then(() => {
+            return db.Question.findAll({
+                order: [
+                    ['createdAt','DESC'],
+                ],
+                where: {
+                    acceptedAnswerId: {
+                        [db.db.Op.eq]: null
+                    }
+                },
+                include: [db.User]
+            })
+        }).then(questions => {
+           questions_all = questions.concat(questions_all);
+           let featured_questions = [];
+           if(questions.length >= 2) {
+               featured_questions = [
+                   questions[0],questions[1]
+               ]
+           }
+
+           res.render('question-listing',{
+               questions: questions_all,
+               featured_questions : featured_questions,
+           });
+
+        });
+    });
     return router;
 };

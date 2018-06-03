@@ -1,0 +1,13 @@
+.badge {
+  display: inline-block;
+  border-radius: 1.25rem;
+  color: white;
+  text-align: center;
+}
+
+
+@each $color, $value in $themed-colors {
+  .badge-#{$color} {
+    background-color: $value;
+  }
+}

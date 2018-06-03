@@ -10,7 +10,7 @@ module.exports = (app) => {
     });
 
     app.get('/',(req,res) => {
-        res.render('question-listing');
+        res.redirect('/question/list');
     });
 };
 
