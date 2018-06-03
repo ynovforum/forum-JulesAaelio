@@ -3,6 +3,7 @@ const db = require('./utils/database');
 const auth = require('./utils/auth');
 const passport = require('./utils/auth').passport(db.User);
 const authguard = require('./utils/auth-guard');
+const adminguard = require('./utils/admin-guard');
 
 console.log("App started at " , new Date().toLocaleString());
 
@@ -16,6 +17,7 @@ require('./utils/login.js')(app,auth,passport,db);
 app.use('/question',require('./endpoints/question-anon')(db));
 app.use('/question',authguard,require('./endpoints/question')(db));
 app.use('/profile',authguard,require('./endpoints/profile')(db));
+app.use('/users',authguard,adminguard,require('./endpoints/users')(db));
 require('./utils/errors')(app);
 
 //Launch server
