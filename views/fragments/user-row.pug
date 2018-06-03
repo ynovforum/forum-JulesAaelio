@@ -1,0 +1,16 @@
+.row.v-spaced
+    .col.col-expand
+        .card
+            .card-body
+                .row.align-items-center
+                    .col
+                        img(src='http://placehold.it/50x50').rounded-circle
+                    .col.col-expand
+                        div #{user.firstname}  #{user.lastname}
+                        small.text-muted #{user.role === 'ADMIN' ? 'Administrateur' : 'Utilisateur'}
+                    .col.col-md-2
+                        div #{user.questions.length}
+                        small.text-muted Questions
+
+                    .col.col-md-2
+                        button.btn.btn-warning.text-white Promote

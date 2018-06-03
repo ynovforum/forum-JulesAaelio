@@ -105,7 +105,8 @@ footer {
   padding-right: 14px;
 }
 
-.text-success {
-  color: $success;
+@each $color, $value in $themed-colors {
+  .text-#{$color} {
+    color: $value;
+  }
 }
-

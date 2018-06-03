@@ -1,0 +1,6 @@
+extends base
+block content
+    for user in users
+        include fragments/user-row
+    else
+        div No users !
