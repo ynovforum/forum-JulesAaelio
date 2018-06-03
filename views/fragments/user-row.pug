@@ -13,4 +13,7 @@
                         small.text-muted Questions
 
                     .col.col-md-2
-                        button.btn.btn-warning.text-white Promote
+                        if(user.role !== 'ADMIN')
+                            button.btn.btn-danger.text-white.promote-btn(data-id=user.id) Promote
+                        else
+                            button.btn.btn-primary.demote-btn(data-id=user.id) Demote

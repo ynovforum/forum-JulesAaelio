@@ -12,5 +12,38 @@ module.exports = (db) => {
                 });
             });
         });
+
+    router.post('/:id/promote', (req, res, next) => {
+        if (req.params.id !== req.user.id) {
+            db.User.findById(req.params.id)
+                .then(user => {
+                    if (user) {
+                        user.role = 'ADMIN';
+                        user.save().then(user => {
+                            res.send(user);
+                        });
+                    } else {
+                        next()
+                    }
+                })
+        }
+    });
+
+    router.post('/:id/demote', (req, res, next) => {
+        if (req.params.id !== req.user.id) {
+            db.User.findById(req.params.id)
+                .then(user => {
+                    if (user) {
+                        user.role = 'USER';
+                        user.save().then(user => {
+                            res.send(user);
+                        });
+                    } else {
+                        next()
+                    }
+                })
+        }
+    });
+
     return router;
 };
